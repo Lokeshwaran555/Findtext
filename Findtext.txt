@@ -1,0 +1,20 @@
+it('Association', function(){
+
+    cy.visit('http://dev.devmobo.com/')
+    cy.get('#email').type('lokzz05000@gmail.com')
+    cy.get('#password').type('Lokesh@52510')
+    cy.get('#loginButton').click()
+    cy.get('#associationsLink').click()
+    cy.get('#associationName').type('abacaad')
+    cy.get('#zipcode').type('90011')
+    
+    cy.get('#addAssocationButton').click()
+   cy.get("#errorMessage").should("have.text","HOA already exists in this zip code")
+    
+    
+        
+
+        
+
+
+    })
